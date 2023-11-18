@@ -1,0 +1,10 @@
+import socket
+
+clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+clientsocket.connect(('localhost', 10000))
+clientsocket.send('GET_KEY'.encode())
+data = clientsocket.recv(1024).decode()
+reversed = data[::-1]
+yoo = clientsocket.send(reversed.encode())
+data1 = clientsocket.recv(1024).decode()
+print(data1)
