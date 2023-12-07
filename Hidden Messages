@@ -1,0 +1,10 @@
+#
+# One of the agents has intercepted a file from the aliens
+# The flag is hidden in large amount of non alphanumeric characters.
+# The file lives at /tmp/destroymoonbase.gif
+#
+myfile = open("/tmp/destroymoonbase.gif", "r")
+filecontents = myfile.read()
+s1="".join(c for c in filecontents if c.isalnum())
+print (s1)
+myfile.close()
